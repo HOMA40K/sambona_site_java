@@ -1,5 +1,12 @@
-<div th:fragment="page-content" >
-<h1>about page</h1>
-    <h2 th:text="${page_text}" ></h2>
+<div class="flex flex-col min-h-screen">
+    <!-- nav -->
+    <div th:insert="~{${#strings.concat(page_lang, '/parts/nav')}}"></div>
 
+    <div class="containter flex-1">
+
+    </div>
+    <!-- footer -->
+    <div th:insert="~{${#strings.concat(page_lang, '/parts/footer')}}"></div>
+    <div class="toast toast-top toast-end">
+    </div>
 </div>

@@ -2,33 +2,25 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title th:text="${title}"></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!--    <title th:text="${title}"></title>-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="tailwind.css" rel="stylesheet">
+    <link href="/tailwind.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="/siteimg/Sambona_logo_mini3.webp">
 </head>
 
 <body class="relative">
-    <div class="flex flex-col min-h-screen" >
-    <div th:insert="${page_lang}/parts/nav"></div>
+<div class="flex flex-col min-h-screen">
+    <!-- nav -->
+    <div th:insert="~{${#strings.concat(page_lang, '/parts/nav')}}"></div>
 
-    <!--passing a page content, basically I use base.html as
-main page and extend that with page content that I need-->
-
-    <div class="containter flex-1">
-        <div th:insert="${}/${page_content} :: page-content"></div>
+    <div class="container flex-1">
+        <div th:insert="~{${#strings.concat(page_lang, '/', page_content)}}" ></div>
     </div>
-
-    <div th:insert="${page_lang}/parts/footer"></div>
-
-
-
-
+    <!-- footer -->
+    <div th:insert="~{${#strings.concat(page_lang, '/parts/footer')}}"></div>
     <div class="toast toast-top toast-end">
-
     </div>
-    </div>
+</div>
 </body>
-
 </html>

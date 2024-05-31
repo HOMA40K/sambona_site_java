@@ -3,32 +3,42 @@
         <button onclick="openSidenav()" class="btn btn-square btn-ghost lg:hidden ">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                  class="inline-block w-5 h-5 stroke-current ">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
         </button>
     </div>
     <div class="flex-1">
         <a class="btn btn-ghost text-xl">Sambona Group</a>
     </div>
-
     <div class="flex-none">
-        <ul class="menu menu-horizontal px-1">
+        <ul class="menu menu-horizontal px-1 hidden md:block">
             <li>
                 <details>
                     <summary>
                         Услуги
                     </summary>
                     <ul class="p-2 bg-base-100 rounded-t-none w-48 text-nowrap">
-                        <li class="mt-2 w-full"><button class="btn btn-square btn-ghost w-fit px-4">Ремонт</button></li>
-                        <li class="mt-2 w-fit"><button class="btn btn-square btn-ghost w-fit px-4">Установка</button></li>
-                        <li class="mt-2 w-fit"><button class="btn btn-square btn-ghost w-fit px-4">Обслуживание</button></li>
-                        <li class="mt-2 w-fit"><button class="btn btn-square btn-ghost w-fit px-4">Запасные части</button></li>
+                        <li class="mt-2 w-full">
+                            <button class="btn btn-square btn-ghost w-fit px-4">Ремонт</button>
+                        </li>
+                        <li class="mt-2 w-fit">
+                            <button class="btn btn-square btn-ghost w-fit px-4">Установка</button>
+                        </li>
+                        <li class="mt-2 w-fit">
+                            <button class="btn btn-square btn-ghost w-fit px-4">Обслуживание</button>
+                        </li>
+                        <li class="mt-2 w-fit">
+                            <button class="btn btn-square btn-ghost w-fit px-4">Запасные части</button>
+                        </li>
                     </ul>
                 </details>
             </li>
         </ul>
         <div class="hidden xsm:block">
-            <button class="btn btn-square btn-ghost w-fit mr-4 max-w-fit px-2">Рассчитать цену</button>
+            <!-- TODO: переделать ссылку на ссылку с переменной page_lang -->
+            <button class="btn btn-square btn-ghost w-fit mr-4 max-w-fit px-2"><a
+                    th:href="${#strings.concat('/pricing')}" target="_blank">Рассчитать цену</a></button>
         </div>
         <div class="hidden md:block">
             <button onclick="goOnOtherLang(this)" class="btn btn-square btn-ghost ">RU</button>
@@ -60,7 +70,7 @@
             <a href="#" class="btn btn-ghost pl-4 border-l-0 font-semibold text-base ">ПРОДУКЦИЯ</a>
 
             <div class="collapse collapse-arrow rounded-none min-h-12 ">
-                <input type="checkbox" class="peer min-h-12" />
+                <input type="checkbox" class="peer min-h-12"/>
                 <div class="collapse-title peer-checked:text-secondary-content bg-none min-h-12 pl-4 py-2 after:!top-6 font-semibold pt-3 font-sans text-base">
                     УСЛУГИ
                 </div>
@@ -96,6 +106,7 @@
         document.getElementById('darker').classList.remove('hidden');
         console.log('open');
     }
+
     function closeSidenav() {
         document.body.style.overflow = 'auto';
         document.getElementById('sidenav').classList.add('hidden');
