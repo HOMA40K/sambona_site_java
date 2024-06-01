@@ -1,4 +1,4 @@
-<div class="navbar bg-base-200 z-10" id="navbar">
+<div class="navbar bg-[#FFCC00] z-10" id="navbar">
     <div class="flex-none">
         <button onclick="openSidenav()" class="btn btn-square btn-ghost lg:hidden ">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -91,13 +91,12 @@
 </div>
 
 <script>
-
-
     function goOnOtherLang(button) {
-        var currentUrl = window.location.href;
-        preferredLang = button.innerHTML.toLowerCase();
-        var newUrl = currentUrl.replace(/\/[a-z]{2}\//, '/' + preferredLang + '/');
-        window.location.href = newUrl;
+        var lang = button.innerText;
+        var url;
+        url = window.location.href.toString();
+        let newUrl = url.replace(/\/[A-Z]{2}\//, '/' + lang + '/');
+        console.log(newUrl)
     }
 
     function openSidenav() {
@@ -112,5 +111,5 @@
         document.getElementById('sidenav').classList.add('hidden');
         document.getElementById('darker').classList.add('hidden');
         console.log('close');
-    }
+        }
 </script>
