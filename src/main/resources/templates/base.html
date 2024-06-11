@@ -2,10 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <!--    <title th:text="${title}"></title>-->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/tailwind.css" rel="stylesheet">
+    <link href="/css/tailwind.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="/siteimg/Sambona_logo_mini3.webp">
 </head>
 
@@ -17,7 +16,7 @@
     <div th:insert="~{${#strings.concat(page_lang, '/parts/nav')}}"></div>
 
     <div class="container flex-1">
-        <div th:insert="~{${#strings.concat(page_lang, '/', page_content)}}" ></div>
+        <div th:insert="~{${#strings.concat(page_lang, '/', page_content)}}"></div>
     </div>
     <!-- footer -->
     <div th:insert="~{${#strings.concat(page_lang, '/parts/footer')}}"></div>
