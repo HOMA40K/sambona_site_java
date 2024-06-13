@@ -16,31 +16,40 @@
             <li>
                 <details>
                     <summary>
-                        Услуги
+                        Аренда мобильных кранов
                     </summary>
                     <ul class="p-2 bg-base-100 rounded-t-none w-48 text-nowrap">
                         <li class="mt-2 w-full">
-                            <button class="btn btn-square btn-ghost w-fit px-4">Ремонт</button>
+                            <button class="btn btn-square btn-ghost w-fit px-4">30Т</button>
                         </li>
-                        <li class="mt-2 w-fit">
-                            <button class="btn btn-square btn-ghost w-fit px-4">Установка</button>
-                        </li>
-                        <li class="mt-2 w-fit">
-                            <button class="btn btn-square btn-ghost w-fit px-4">Обслуживание</button>
-                        </li>
-                        <li class="mt-2 w-fit">
-                            <button class="btn btn-square btn-ghost w-fit px-4">Запасные части</button>
+                        <li class="mt-2 w-full">
+                            <button class="btn btn-square btn-ghost w-fit px-4">40Т</button>
                         </li>
                     </ul>
                 </details>
             </li>
         </ul>
-        <div class="hidden xsm:block">
-            <!-- TODO: переделать ссылку на ссылку с переменной page_lang -->
-            <button class="btn btn-square btn-ghost w-fit mr-4 max-w-fit px-2"><a
+        <ul class="menu menu-horizontal px-1 hidden md:block">
+            <li>
+                <details>
+                    <summary>
+                        Продукция
+                    </summary>
 
-                    th:href="@{/{lang}/pricing (lang=${page_lang})}" target="_blank">Рассчитать цену</a></button>
-        </div>
+                    <ul class="p-2 bg-base-100 rounded-t-none w-48 text-nowrap">
+                        <li class="mt-2 w-full">
+                            <button class="btn btn-square btn-ghost w-fit px-4">Козловые краны</button>
+                        </li>
+                        <li class="mt-2 w-full">
+                            <button class="btn btn-square btn-ghost w-fit px-4">Мостовые краны</button>
+                        </li>
+                        <li class="mt-2 w-full">
+                            <button class="btn btn-square btn-ghost w-fit px-4">Консольные краны</button>
+                        </li>
+                    </ul>
+                </details>
+            </li>
+        </ul>
         <div class="hidden md:block">
             <button onclick="goOnOtherLang(this)" class="btn btn-square btn-ghost ">RU</button>
             <button onclick="goOnOtherLang(this)" class="btn btn-square btn-ghost ">EN</button>
@@ -50,7 +59,7 @@
 </div>
 
 
-<div id="darker" class="hidden fixed bg-black opacity-50 h-screen w-screen z-[11]">
+<div id="darker" class="absolute bg-black opacity-10 h-screen w-screen z-[11] hidden">
 
 </div>
 <!-- боковой нав -->
@@ -68,20 +77,30 @@
             <button onclick="goOnOtherLang(this)" class="btn btn-square btn-ghost ">ET</button>
         </div>
         <div class="flex flex-col items-start justify-start h-full">
-            <a href="#" class="btn btn-ghost pl-4 border-l-0 font-semibold text-base ">ПРОДУКЦИЯ</a>
 
             <div class="collapse collapse-arrow rounded-none min-h-12 ">
                 <input type="checkbox" class="peer min-h-12"/>
                 <div class="collapse-title peer-checked:text-secondary-content bg-none min-h-12 pl-4 py-2 after:!top-6 font-semibold pt-3 font-sans text-base">
-                    УСЛУГИ
+                    Аренда мобильных кранов
                 </div>
                 <div class="collapse-content peer-checked:text-secondary-content pl-8">
                     <ul>
-                        <li class="mt-2"><a href="#">Ремонт</a></li>
-                        <li class="mt-2"><a href="#">Установка</a></li>
-                        <li class="mt-2"><a href="#">Обслуживание</a></li>
-                        <li class="mt-2"><a href="#">Запасные части</a></li>
-                        <li class="mt-2"><a href="#">Ценовое предложение</a></li>
+                        <li class="mt-2"><a href="#">30Т</a></li>
+                        <li class="mt-2"><a href="#">40Т</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapse collapse-arrow rounded-none min-h-12 ">
+                <input type="checkbox" class="peer min-h-12"/>
+                <div class="collapse-title peer-checked:text-secondary-content bg-none min-h-12 pl-4 py-2 after:!top-6 font-semibold pt-3 font-sans text-base">
+                    Продукция
+                </div>
+                <div class="collapse-content peer-checked:text-secondary-content pl-8">
+                    <ul>
+                        <li class="mt-2"><a href="#">Козловые краны</a></li>
+                        <li class="mt-2"><a href="#">Мостовые краны</a></li>
+                        <li class="mt-2"><a href="#">Консольные краны</a></li>
                     </ul>
                 </div>
             </div>
