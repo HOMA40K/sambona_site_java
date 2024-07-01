@@ -14,12 +14,6 @@ public class Conntroller {
         model.addAttribute("page_text", "This is the about page");
         return "base";
     }
-    @GetMapping("/{lang}/pricing")
-    public String contact(@PathVariable(value = "lang") String lang, Model model) {
-        model.addAttribute("page_content", "choose-crane");
-        model.addAttribute("page_lang", lang);
-        return "base";
-    }
     @GetMapping("/{lang}")
     public String home(@PathVariable(value = "lang") String lang,Model model) {
         model.addAttribute("page_content", "home");
@@ -27,18 +21,25 @@ public class Conntroller {
         model.addAttribute("page_lang", lang);
         return "base";
     }
-    @GetMapping("/{lang}/pricing/{crane_type}")
-    public String contact(@PathVariable(value = "lang") String lang,@PathVariable(value = "crane_type") String crane_type, Model model) {
+    @GetMapping("/{lang}/pricing")
+    public String contact(@PathVariable(value = "lang") String lang , Model model) {
 
         model.addAttribute("page_content", "pricing");
-        model.addAttribute("crane_type", crane_type);
-        System.out.println(crane_type + " " + "crane_type");
+//        model.addAttribute("crane_type", crane_type);
+//        System.out.println(crane_type + " " + "crane_type");
         model.addAttribute("page_lang", lang);
         return "base";
     }
-    @GetMapping("/{lang}/crane-info")
-    public String craneInfo(@PathVariable(value = "lang") String lang, Model model) {
-        model.addAttribute("page_content", "crane_info");
+    @GetMapping("/{lang}/crane-info/{crane_type}")
+    public String info(@PathVariable(value = "lang")String lang, @PathVariable(value = "crane_type") String crane_type,  Model model) {
+        model.addAttribute("page_content", "crane-info");
+        model.addAttribute("crane_type", crane_type);
+        model.addAttribute("page_lang", lang);
+        return "base";
+    }
+    @GetMapping("/{lang}/info")
+    public String info(@PathVariable(value = "lang")String lang, Model model) {
+        model.addAttribute("page_content", "info");
         model.addAttribute("page_lang", lang);
         return "base";
     }
