@@ -1,11 +1,70 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
-<div class="flex flex-col min-h-screen">
+<div class="flex flex-col">
 
     <div class="containter flex-1">
         <div th:include="~{${#strings.concat(page_lang, '/parts/carousel')}}" >
 
         </div>
     </div>
+
+    <h1 class="mx-auto mt-4">Sambona Group</h1>
+    <h2 class="mx-auto mt-4">Мы занимаемся установкой и аренды кранов кранов</h2>
+    <p class="mx-auto mt-4">Мы предлагаем широкий спектр услуг по установке и аренде кранов. Наши краны оборудованы современными системами безопасности и могут использоваться для различных целей. Мы предлагаем краны различных типов и грузоподъемностью. Наши специалисты помогут вам выбрать кран, который подойдет именно вам.</p>
+    <div class="grid xl:grid-cols-3 md:grid-cols-2 gap-6 justify-items-center">
+        <div class="card bg-base-100  shadow-xl">
+            <figure class="px-4 xsm:px-10 pt-10">
+                <img
+                        src="siteimg/crane1.png"
+                        alt="Shoes"
+                        class="rounded-xl" />
+            </figure>
+            <div class="card-body items-center text-center px-4 xsm:px-10">
+                <h2 class="card-title">konsol-kraan</h2>
+                <p>konsol-kraan-info</p>
+                <div class="card-actions">
+                    <a th:href="@{/{lang}/crane-info/konsol-kraan-info (lang=${page_lang})}"><button class="btn btn-primary">Подробнее</button></a>
+                    <a th:href="@{/{lang}/pricing (lang=${page_lang})}"><button class="btn btn-primary">Выбрать кран</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="card bg-base-100  shadow-xl">
+            <figure class="px-4 xsm:px-10 pt-10">
+                <img
+                        src="siteimg/crane1.png"
+                        alt="Shoes"
+                        class="rounded-xl" />
+            </figure>
+            <div class="card-body items-center text-center px-4 xsm:px-10">
+                <h2 class="card-title">pukk-kraan</h2>
+                <p>pukk-kraan-info</p>
+                <div class="card-actions">
+                    <a th:href="@{/{lang}/crane-info/pukk-kraan-info (lang=${page_lang})}"><button class="btn btn-primary">Подробнее</button></a>
+                    <a th:href="@{/{lang}/pricing (lang=${page_lang})}"><button class="btn btn-primary">Выбрать кран</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="card bg-base-100  shadow-xl">
+            <figure class="px-4 xsm:px-10 pt-10">
+                <img
+                        src="siteimg/crane1.png"
+                        alt="Shoes"
+                        class="rounded-xl" />
+            </figure>
+            <div class="card-body items-center text-center px-4 xsm:px-10">
+                <h2 class="card-title">sild-kraan</h2>
+                <p>sild-kraan-Info</p>
+                <div class="card-actions">
+                    <a th:href="@{/{lang}/crane-info/sild-kraan-Info (lang=${page_lang})}"><button class="btn btn-primary">Подробнее</button></a>
+                    <a th:href="@{/{lang}/pricing (lang=${page_lang})}"><button class="btn btn-primary">Выбрать кран</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="toast-container">
+        <div class="toast toast-top toast-end">
+        </div>
+    </div>
+</div>
+
     <div class="toast toast-top toast-end">
     </div>
 </div>

@@ -1,4 +1,4 @@
-<div class="navbar bg-[#FFCC00] z-10" id="navbar">
+<div class="navbar bg-[#FFCC00] z-20" id="navbar">
     <div class="flex-none">
         <button onclick="openSidenav()" class="btn btn-square btn-ghost lg:hidden ">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -9,7 +9,7 @@
         </button>
     </div>
     <div class="flex-1">
-        <a class="btn btn-ghost text-xl">Sambona Group</a>
+        <a class="btn btn-ghost text-xl" th:href="@{/{lang} (lang=${page_lang})}">Sambona Group</a>
     </div>
     <div class="flex-none">
         <ul class="menu menu-horizontal px-1 hidden md:block">
@@ -18,12 +18,12 @@
                     <summary>
                         Аренда мобильных кранов
                     </summary>
-                    <ul class="p-2 bg-base-100 rounded-t-none w-48 text-nowrap">
+                    <ul class="p-2 bg-base-100 rounded-t-none w-48 text-nowrap z-20">
                         <li class="mt-2 w-full">
-                            <button class="btn btn-square btn-ghost w-fit px-4">30Т</button>
+                            <button class="btn btn-square btn-ghost w-full justify-start px-4 text-left">30Т</button>
                         </li>
                         <li class="mt-2 w-full">
-                            <button class="btn btn-square btn-ghost w-fit px-4">40Т</button>
+                            <button class="btn btn-square btn-ghost w-full justify-start px-4 text-left">40Т</button>
                         </li>
                     </ul>
                 </details>
@@ -36,15 +36,15 @@
                         Продукция
                     </summary>
 
-                    <ul class="p-2 bg-base-100 rounded-t-none w-48 text-nowrap">
+                    <ul class="p-2 bg-base-100 rounded-t-none w-48 text-nowrap z-20 justify-start">
                         <li class="mt-2 w-full">
-                            <button class="btn btn-square btn-ghost w-fit px-4">Козловые краны</button>
+                            <button class="btn btn-square btn-ghost w-full justify-start px-4 text-left"><a th:href="@{/{lang}/crane-info/pukk-kraan-info (lang=${page_lang})}">Козловые краны</a></button>
                         </li>
                         <li class="mt-2 w-full">
-                            <button class="btn btn-square btn-ghost w-fit px-4">Мостовые краны</button>
+                            <button class="btn btn-square btn-ghost w-full justify-start px-4 text-left"><a th:href="@{/{lang}/crane-info/sild-kraan-info (lang=${page_lang})}">Мостовые краны</a></button>
                         </li>
                         <li class="mt-2 w-full">
-                            <button class="btn btn-square btn-ghost w-fit px-4">Консольные краны</button>
+                            <button class="btn btn-square btn-ghost w-full justify-start px-4 text-left"><a th:href="@{/{lang}/crane-info/konsol-kraan-info (lang=${page_lang})}">Консольные краны</a></button>
                         </li>
                     </ul>
                 </details>
