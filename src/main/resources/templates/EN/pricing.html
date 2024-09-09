@@ -1,0 +1,24 @@
+<div class="flex flex-col items-center justify-center h-full mt-4 ">
+    <div class="items-center self-center">
+        <h1 class="text-3xl font-semibold w-fit mx-auto">Ценовое предложение</h1>
+        <h3 class="text-base">Заполните форму ниже и мы свяжемся с вами в ближайшее время</h3>
+    </div>
+    <div class="flex flex-col items-start justify-center border-2 border-black rounded-lg mb-4 md:w-4/5 w-full px-2 mt-4">
+        <div class="p-4 w-full">
+            <div>
+
+                </div>
+                <form action="POST">
+                    <div>
+                        <div th:insert="~{${#strings.concat(page_lang, '/parts/contact-info')}}"></div>
+
+                        <hr class="mt-6 w-full mx-auto h-1 bg-[#A2AEC3]">
+                        <div th:insert="~{${#strings.concat(page_lang, '/parts/pricing-form')}}"></div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

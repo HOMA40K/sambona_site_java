@@ -1,0 +1,103 @@
+<div class="md:grid md:grid-cols-2 md:gap-4">
+<div class="mt-4">
+<label class="form-control w-full max-w-xs">
+<span class="label-text">Kraana tüüp</span>
+</label>
+<select class="select select-bordered w-full max-w-xs" id="crane_type" onchange="if (this.selectedIndex) change_building_type(this.selectedIndex)">
+<option disabled="" selected="" value="-1"></option>
+<option value="1">Ühekordne sildkraana</option>
+<option value="2">Ühekordne tugikraana</option>
+<option value="3">Kahe tala tugikraana</option>
+</select>
+</div>
+<div class="mt-4">
+<label class="form-control w-full max-w-xs">
+<span class="label-text">Ehitusmeetod</span>
+</label>
+<select class="select select-bordered w-full max-w-xs" id="building_type">
+<option disabled="" selected="">Valige kraana tüüp</option>
+</select>
+</div>
+</div>
+<div id="info 2">
+<div class="md:grid md:grid-cols-2 md:gap-4">
+<div class="mt-4">
+<label class="form-control w-full max-w-xs">
+<span class="label-text">Nõutav tõstekõrgus</span>
+</label>
+<label class="input input-bordered flex items-center gap-2 max-w-xs">
+<input class="grow" placeholder="переносимый вес" type="text"/>
+                mm
+            </label>
+</div>
+<div class="mt-4">
+<label class="form-control w-full max-w-xs">
+<span class="label-text">Nõutav tõstekõrgus</span>
+</label>
+<label class="input input-bordered flex items-center gap-2 max-w-xs">
+<input class="grow" placeholder="переносимый вес" type="text"/>
+                mm
+            </label>
+</div>
+</div>
+<div class="md:grid md:grid-cols-2 md:gap-4">
+<div class="mt-4">
+<label class="form-control w-full max-w-xs">
+<span class="label-text">Telfri liikumiskiirus</span>
+</label>
+<select class="select select-bordered w-full max-w-xs">
+<option disabled="" selected="" value="-1"></option>
+<option value="1">2,5-10 m/min</option>
+<option value="2">5-20 m/min</option>
+<option value="3">8-32 m/min</option>
+</select>
+</div>
+<div class="mt-4">
+<label class="form-control w-full max-w-xs">
+<span class="label-text">Kraana liikumiskiirus</span>
+</label>
+<select class="select select-bordered w-full max-w-xs">
+<option disabled="" selected=""></option>
+<option value="1">5-20 m/min</option>
+<option value="2">10-40 m/min</option>
+</select>
+</div>
+</div>
+<div class="md:grid md:grid-cols-2 md:gap-4">
+<div class="mt-4">
+<label class="form-control w-full max-w-xs">
+<span class="label-text">Kantav kaal</span>
+</label>
+<label class="input input-bordered flex items-center gap-2 max-w-xs">
+<input class="grow" placeholder="переносимый вес" type="text"/>
+                kg
+            </label>
+</div>
+<div class="mt-4">
+<label class="form-control w-full max-w-xs">
+<span class="label-text">Kantav kaal</span>
+</label>
+<label class="input input-bordered flex items-center gap-2 max-w-xs">
+<input class="grow" placeholder="переносимый вес" type="text"/>
+                kg
+            </label>
+</div>
+</div>
+</div>
+<script lang="js">
+    var building_type = document.getElementById("building_type");
+
+    function change_building_type(element) {
+        switch (element) {
+            case 1:
+                building_type.innerHTML = "<option selected value='1'>A</option><option value='2'>B</option>";
+                break;
+            case 2:
+                building_type.innerHTML = "<option selected value='1'>A</option><option value='2'>B</option><option value='3'>C</option>";
+                break;
+            case 3:
+                building_type.innerHTML = "<option selected value='1'>A</option>";
+                break;
+        }
+    }
+</script>
