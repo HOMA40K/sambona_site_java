@@ -7,8 +7,10 @@
     </div>
 
     <h1 class="mx-auto mt-4">Sambona Group</h1>
-    <h2 class="mx-auto mt-4 px-4">Мы занимаемся установкой и аренды кранов кранов</h2>
-    <p class="mx-auto mt-4 px-4">Мы предлагаем широкий спектр услуг по установке и аренде кранов. Наши краны оборудованы современными системами безопасности и могут использоваться для различных целей. Мы предлагаем краны различных типов и грузоподъемностью. Наши специалисты помогут вам выбрать кран, который подойдет именно вам.</p>
+    <h2 class="mx-auto mt-4 px-4">Sambona Group – профессиональный партнёр в сфере аренды и продажи подъёмных кранов</h2>
+    <p class="mx-auto mt-4 px-4">Компания Sambona Group предлагает широкий выбор подъёмных кранов для любых строительных задач. Мы обеспечиваем аренду и продажу современного оборудования, которое отвечает всем требованиям безопасности и эффективности. В нашем ассортименте вы найдёте краны различной грузоподъёмности и конфигураций, что позволяет подобрать идеальное решение для любого проекта.
+
+        Sambona Group гарантирует высокое качество техники, профессиональное обслуживание и своевременную доставку. Мы стремимся обеспечить наших клиентов надёжным оборудованием, которое способствует успешной и безопасной работе на объекте.</p>
     <div class="grid xl:grid-cols-3 md:grid-cols-2 gap-6 justify-items-center">
         <div class="card bg-base-100  shadow-xl">
             <figure class="px-4 xsm:px-10 pt-10">
@@ -21,7 +23,7 @@
                 <h2 class="card-title">консольный кран</h2>
                 <p>информация о консольном кране</p>
                 <div class="card-actions">
-                    <a th:href="@{/{lang}/crane-info/konsol-kraan-info (lang=${page_lang})}"><button class="btn btn-primary">Подробнее</button></a>
+                    <a th:href="@{/crane-info/konsol-kraan-info?lang={lang} (lang=${page_lang})}"><button class="btn btn-primary">Подробнее</button></a>
                     <a th:href="@{/{lang}/pricing (lang=${page_lang})}"><button class="btn btn-primary">Выбрать кран</button></a>
                 </div>
             </div>
@@ -29,15 +31,13 @@
         <div class="card bg-base-100  shadow-xl">
             <figure class="px-4 xsm:px-10 pt-10">
                 <img
-                        src="siteimg/crane1.png"
-                        alt="Shoes"
-                        class="rounded-xl" />
+                        src="siteimg/crane1.png"/>
             </figure>
             <div class="card-body items-center text-center px-4 xsm:px-10">
-                <h2 class="card-title">pukk-kraan</h2>
-                <p>pukk-kraan-info</p>
+                <h2 class="card-title">Козловой кран</h2>
+                <p>Информация о козловом кране</p>
                 <div class="card-actions">
-                    <a th:href="@{/{lang}/crane-info/pukk-kraan-info (lang=${page_lang})}"><button class="btn btn-primary">Подробнее</button></a>
+                    <a th:href="@{/crane-info/pukk-kraan-info?lang={lang} (lang=${page_lang})}"><button class="btn btn-primary">Подробнее</button></a>
                     <a th:href="@{/{lang}/pricing (lang=${page_lang})}"><button class="btn btn-primary">Выбрать кран</button></a>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                 <h2 class="card-title">мостовой кран</h2>
                 <p>информация о мостовом кране</p>
                 <div class="card-actions">
-                    <a th:href="@{/{lang}/crane-info/sild-kraan-Info (lang=${page_lang})}"><button class="btn btn-primary">Подробнее</button></a>
+                    <a th:href="@{/crane-info/sild-kraan-info?lang={lang} (lang=${page_lang})}"><button class="btn btn-primary">Подробнее</button></a>
                     <a th:href="@{/{lang}/pricing (lang=${page_lang})}"><button class="btn btn-primary">Выбрать кран</button></a>
                 </div>
             </div>
