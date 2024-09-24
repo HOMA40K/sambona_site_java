@@ -1,34 +1,40 @@
 <div class="my-carousel-container mt-4">
     <div class="my-carousel">
         <div class="my-carousel-item my-active">
-            <img src="siteimg/crane1.png" alt="Image 1">
+            <img src="siteimg/console.png" alt="Image 1">
         </div>
         <div class="my-carousel-item">
-            <img src="siteimg/pic2.JPG" alt="Image 2">
+            <img src="siteimg/most.JPG" alt="Image 2">
         </div>
         <div class="my-carousel-item">
-            <img src="/siteimg/40tonn.jpg" alt="Image 3">
+            <img src="/siteimg/kozl.jpg" alt="Image 3">
+        </div>
+        <div class="my-carousel-item">
+            <img src="/siteimg/30tonn.jpg" alt="Image 4">
+        </div>
+        <div class="my-carousel-item">
+            <img src="/siteimg/40tonn.jpg" alt="Image 5">
         </div>
         <!-- Add more images as needed -->
     </div>
-    <button class="my-prev" onclick="moveMyCarousel(-1)"></button>
-    <button class="my-next" onclick="moveMyCarousel(1)"></button>
+    <button class="my-prev" onclick="moveMyCarousel(-1); stopAutoScroll();"></button>
+    <button class="my-next" onclick="moveMyCarousel(1); stopAutoScroll();"></button>
 </div>
 
 <style>
     .my-carousel-container {
         position: relative;
-        width: 100%; /* Make the carousel full width */
+        width: 100%;
         overflow: hidden;
         border-radius: 10px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        max-width: 100%; /* Ensure no overflow on larger screens */
+        max-width: 100%;
     }
 
     .my-carousel {
         display: flex;
         transition: transform 0.5s ease-in-out;
-        width: 100%; /* Ensure carousel is full width */
+        width: 100%;
     }
 
     .my-carousel-item {
@@ -36,16 +42,16 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        flex-shrink: 0; /* Prevent shrinking of items */
-        height: 400px; /* Set a fixed height */
-        background-color: #f0f0f0; /* Optional: background color for padding area */
+        flex-shrink: 0;
+        height: 400px;
+        background-color: #f0f0f0;
         transition: opacity 0.5s ease-in-out;
     }
 
     .my-carousel-item img {
         max-width: 100%;
         max-height: 100%;
-        object-fit: contain; /* Ensure the entire image fits within the container */
+        object-fit: contain;
     }
 
     .my-prev, .my-next {
@@ -55,15 +61,15 @@
         background-color: rgba(0, 0, 0, 0.5);
         color: white;
         border: none;
-        width: 40px; /* Set width */
-        height: 40px; /* Set height */
+        width: 40px;
+        height: 40px;
         cursor: pointer;
-        border-radius: 50%; /* Make the button round */
-        z-index: 10; /* Ensure buttons are above images */
+        border-radius: 50%;
+        z-index: 10;
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+        transition: background-color 0.3s ease;
     }
 
     .my-prev {
@@ -96,8 +102,10 @@
         border-color: transparent transparent transparent white;
     }
 </style>
-<script lang="js">
+
+<script>
     let myCurrentIndex = 0;
+    let autoScrollInterval;
 
     function moveMyCarousel(direction) {
         const items = document.querySelectorAll('.my-carousel-item');
@@ -116,4 +124,19 @@
         // Move the carousel container
         document.querySelector('.my-carousel').style.transform = `translateX(-${myCurrentIndex * 100}%)`;
     }
+
+    function startAutoScroll() {
+        autoScrollInterval = setInterval(() => {
+            moveMyCarousel(1);
+        }, 2000); // 3000ms = 3 seconds interval
+    }
+
+    function stopAutoScroll() {
+        clearInterval(autoScrollInterval); // Stop automatic scrolling when user interacts
+    }
+
+    // Start the auto-scroll when the page loads
+    window.onload = function() {
+        startAutoScroll();
+    };
 </script>
