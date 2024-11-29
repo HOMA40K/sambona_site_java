@@ -3,22 +3,56 @@
         <h1 class="text-3xl font-semibold w-fit mx-auto">Ценовое предложение</h1>
         <h3 class="text-base">Заполните форму ниже и мы свяжемся с вами в ближайшее время</h3>
     </div>
+    <div id="successModal" class="fixed top-4 right-4 bg-white p-4 rounded-lg shadow-lg hidden transition-opacity duration-1000">
+        <span class="close text-gray-500 hover:text-gray-900 cursor-pointer" onclick="closeModal()">&times;</span>
+        <p id="myModalText" class="text-lg font-semibold"></p>
+    </div>
     <div class="flex flex-col items-start justify-center border-2 border-black rounded-lg mb-4 md:w-4/5 w-full px-2 mt-4">
         <div class="p-4 w-full">
             <div>
-
-                </div>
-                <form action="POST">
-                    <div>
-                        <div th:insert="~{${#strings.concat(page_lang, '/parts/contact-info')}}"></div>
-
-                        <hr class="mt-6 w-full mx-auto h-1 bg-[#A2AEC3]">
-                        <div th:insert="~{${#strings.concat(page_lang, '/parts/pricing-form')}}"></div>
-
-                    </div>
-                </form>
             </div>
+            <form id="pricingForm" onsubmit="sendRequest(event)">
+                <div>
+                    <div th:insert="~{${#strings.concat(page_lang, '/parts/contact-info')}}"></div>
+
+                    <hr class="mt-6 w-full mx-auto h-1 bg-[#A2AEC3]">
+                    <div th:insert="~{${#strings.concat(page_lang, '/parts/pricing-form')}}"></div>
+
+                    <!-- Submit Button -->
+                    <div class="mt-4 w-full flex justify-center">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
 
+<script>
+    async function hideModal() {
+        await new Promise(r => setTimeout(r, 3000));
+        document.getElementById('successModal').classList.add('hidden');
+    }
+
+    async function sendRequest(event) {
+        document.getElementById('myModalText').innerText = 'Sending your request...';
+        document.getElementById('successModal').classList.remove('hidden');
+        event.preventDefault();
+        const form = document.getElementById('pricingForm');
+        const formData = new FormData(form);
+        const response = await fetch('/sendData', {
+            method: 'POST',
+            body: formData
+        });
+        if (response.ok) {
+            document.getElementById('myModalText').innerText = 'Your request has been sent successfully, please check your email';
+            document.getElementById('successModal').classList.remove('hidden');
+            hideModal();
+        } else {
+            console.log(data);
+            document.getElementById('myModalText').innerText = 'There was an error sending your request';
+            document.getElementById('successModal').classList.remove('hidden');
+            hideModal();
+        }
+    }
+</script>

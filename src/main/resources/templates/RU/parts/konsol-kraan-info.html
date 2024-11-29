@@ -56,6 +56,6 @@
         </div>
     </div>
     <div class="w-full flex p-4 h-fit">
-        <a href="/RU/pricing" class="ml-auto"><button class="btn btn-primary">Заказать</button></a>
+        <a th:href="@{/pricing?lang={lang} (lang=${page_lang})}" class="ml-auto"><button class="btn btn-primary">Заказать</button></a>
     </div>
 </div>

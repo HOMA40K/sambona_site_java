@@ -5,31 +5,22 @@
     <div class="mt-4 w-full">
         <label class="form-control w-full max-w-xs mx-auto">
             <span class="label-text">Тип крана</span>
-            <select id="crane_type"
+            <select id="crane_type" name="crane_type"
                     onchange="if (this.selectedIndex) change_building_type(this.selectedIndex)"
                     class="select select-bordered w-full max-w-xs mx-auto">
                 <option disabled selected value="-1"></option>
-                <option value="1">Однобалочный мостовой кран</option>
-                <option value="2">Однобалочный опорный кран</option>
-                <option value="3">Двухбалочный опорный кран</option>
+                <option value="Однобалочный подвесной мостовой кран">Однобалочный подвесной мостовой кран</option>
+                <option value="Однобалочный опорный мостовой кран">Однобалочный опорный мостовой кран</option>
+                <option value="Двухбалльный опорный мостовой кран">Двухбалльный опорный мостовой кран</option>
             </select>
         </label>
     </div>
     <div class="mt-4 w-full">
         <label class="form-control w-full max-w-xs mx-auto">
-            <span class="label-text">Фирма *</span>
-            <select id="building_type" class="select select-bordered w-full max-w-xs mx-auto">
+            <span class="label-text">Тип построения крана</span>
+            <select id="building_type" name="building_type" class="select select-bordered w-full max-w-xs mx-auto">
                 <option disabled selected>Выберите тип крана</option>
             </select>
-        </label>
-    </div>
-    <div class="mt-4 w-full">
-        <label class="form-control w-full max-w-xs mx-auto">
-            <span class="label-text">Подъёмная сила</span>
-        </label>
-        <label class="input input-bordered flex items-center gap-2 max-w-xs mx-auto">
-            <input type="text" class="grow" placeholder="переносимый вес"/>
-            mm
         </label>
     </div>
     <div class="mt-4 w-full">
@@ -37,49 +28,48 @@
             <span class="label-text">Пролёты</span>
         </label>
         <label class="input input-bordered flex items-center gap-2 max-w-xs mx-auto">
-            <input type="text" class="grow" placeholder="пролёты"/>
+            <input type="text" name="spans" class="grow" placeholder="Пролёты"/>
+            mm
+        </label>
+    </div>
+    <div class="mt-4 w-full">
+        <label class="form-control w-full max-w-xs mx-auto">
+            <span class="label-text">Высота подъёма</span>
+        </label>
+        <label class="input input-bordered flex items-center gap-2 max-w-xs mx-auto">
+            <input type="text" name="lifting_height" class="grow" placeholder="Высота подъёма"/>
+            mm
         </label>
     </div>
     <div class="mt-4 w-full">
         <label class="form-control w-full max-w-xs mx-auto">
             <span class="label-text">Скорость передвижения Телфера</span>
-            <select class="select select-bordered w-full max-w-xs mx-auto">
+            <select name="telfer_speed" class="select select-bordered w-full max-w-xs mx-auto">
                 <option disabled selected value="-1"></option>
-                <option value="1">2,5-10 m/min</option>
-                <option value="2">5-20 m/min</option>
-                <option value="3">8-32 m/min</option>
+                <option value="2,5-10 m/min">2,5-10 m/min</option>
+                <option value="5-20 m/min">5-20 m/min</option>
+                <option value="8-32 m/min">8-32 m/min</option>
             </select>
         </label>
-
     </div>
     <div class="mt-4 w-full">
         <label class="form-control w-full max-w-xs mx-auto">
             <span class="label-text">Скорость передвижения крана</span>
-            <select class="select select-bordered w-full max-w-xs mx-auto">
+            <select name="crane_speed" class="select select-bordered w-full max-w-xs mx-auto">
                 <option disabled selected></option>
-                <option value="1">5-20 m/min</option>
-                <option value="2">10-40 m/min</option>
+                <option value="5-20 m/min">5-20 m/min</option>
+                <option value="10-40 m/min">10-40 m/min</option>
             </select>
         </label>
-
     </div>
     <div class="mt-4 w-full">
         <label class="form-control w-full max-w-xs mx-auto">
-            <span class="label-text">Переносимый вес</span>
+            <span class="label-text">Грузоподъёмность</span>
         </label>
         <label class="input input-bordered flex items-center gap-2 max-w-xs mx-auto">
-            <input type="text" class="grow" placeholder="переносимый вес"/>
+            <input type="text" name="load_capacity" class="grow" placeholder="Грузоподъёмность"/>
             kg
         </label>
-    </div>
-    <div class="mt-4 w-full">
-            <label class="form-control w-full max-w-xs mx-auto ">
-                <span class="label-text">Переносимый вес</span>
-            </label>
-            <label class="input input-bordered flex items-center gap-2 max-w-xs mx-auto ">
-                <input type="text" class="grow" placeholder="переносимый вес"/>
-                kg
-            </label>
     </div>
 </div>
 
@@ -89,13 +79,13 @@
     function change_building_type(element) {
         switch (element) {
             case 1:
-                building_type.innerHTML = "<option selected value='1'>A</option><option value='2'>B</option>";
+                building_type.innerHTML = "<option selected value='EH-A'>EH-A</option><option value='EH-B'>EH-B</option>";
                 break;
             case 2:
-                building_type.innerHTML = "<option selected value='1'>A</option><option value='2'>B</option><option value='3'>C</option>";
+                building_type.innerHTML = "<option selected value='EL-A'>EL-A</option><option value='EL-B'>EL-B</option><option value='EL-C'>EL-C</option>";
                 break;
             case 3:
-                building_type.innerHTML = "<option selected value='1'>A</option>";
+                building_type.innerHTML = "<option selected value='A'>A</option>";
                 break;
         }
     }
