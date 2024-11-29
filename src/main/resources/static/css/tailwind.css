@@ -3460,8 +3460,16 @@ details.collapse summary::-webkit-details-marker {
   right: 0px;
 }
 
+.right-4 {
+  right: 1rem;
+}
+
 .top-0 {
   top: 0px;
+}
+
+.top-4 {
+  top: 1rem;
 }
 
 .z-10 {
@@ -3610,6 +3618,10 @@ details.collapse summary::-webkit-details-marker {
   height: 24rem;
 }
 
+.h-\[48rem\] {
+  height: 48rem;
+}
+
 .h-auto {
   height: auto;
 }
@@ -3625,10 +3637,6 @@ details.collapse summary::-webkit-details-marker {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-\[48rem\] {
-  height: 48rem;
 }
 
 .min-h-12 {
@@ -3788,10 +3796,6 @@ details.collapse summary::-webkit-details-marker {
 
 .flex-wrap {
   flex-wrap: wrap;
-}
-
-.flex-nowrap {
-  flex-wrap: nowrap;
 }
 
 .items-start {
@@ -4239,6 +4243,10 @@ details.collapse summary::-webkit-details-marker {
   transition-duration: 150ms;
 }
 
+.duration-1000 {
+  transition-duration: 1000ms;
+}
+
 .ease-out {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
@@ -4391,27 +4399,6 @@ details.collapse summary::-webkit-details-marker {
 
   .lg\:h-full {
     height: 100%;
-  }
-
-  .lg\:h-12 {
-    height: 3rem;
-  }
-
-  .lg\:h-28 {
-    height: 7rem;
-  }
-
-  .lg\:h-96 {
-    height: 24rem;
-  }
-
-  .lg\:h-fit {
-    height: -moz-fit-content;
-    height: fit-content;
-  }
-
-  .lg\:h-\[48rem\] {
-    height: 48rem;
   }
 
   .lg\:w-1\/2 {
